@@ -3,6 +3,7 @@
 /app/cache/*
 /app/config/parameters.yml
 /app/logs/*
+/app/app.sqlite
 /build/
 /vendor/
 /bin/
