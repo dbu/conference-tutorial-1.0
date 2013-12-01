@@ -1,8 +1,14 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "dbu/conference-tutorial",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Symfony CMF tutorial to build a cms web application",
+    "authors": [
+        {
+            "name": "David Buchmann",
+            "homepage": "https://davidbu.ch"
+        }
+    ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -47,7 +53,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "1.0-dev"
         }
     }
 }
