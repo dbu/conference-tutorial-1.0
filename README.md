@@ -9,9 +9,12 @@ If you are interested in having me do a CMF tutorial for you, please get in
 
 ## Documentation
 
-For the install guide and reference, see:
+The master branch is the Symfony2 Standard Edition without the DemoBundle. It
+has no routes configured and will give you a 404 for the homepage. See the
+branches and pull requests for the actual data.
 
-* [symfony-cmf-standard documentation](http://symfony.com/doc/master/cmf/book/installation.html)
+For further information and setup instructions, see the [project wiki](https://github.com/dbu/conference-tutorial/wiki/Home)
+and the pull requests.
 
 See also:
 
