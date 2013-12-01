@@ -7,10 +7,21 @@ parameters:
     database_user:     ~
     database_password: ~
 
+    phpcr_backend:
+        type: doctrinedbal
+        connection: default
+        caches:
+            meta: liip_doctrine_cache.ns.meta
+            nodes: liip_doctrine_cache.ns.nodes
+    phpcr_workspace: default
+    phpcr_user: admin
+    phpcr_pass: admin
+
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
 
     locale:            en
+    locales:           [en, de, fr]
     secret:            ThisTokenIsNotSoSecretChangeIt
