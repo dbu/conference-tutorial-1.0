@@ -1,13 +1,53 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ 'site.description'|trans }}">
+
+    <title>{% block title %}{{ 'site.title'|trans }}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/css/pure-min.css">
+    <link rel="stylesheet" href="/css/marketing.css">
+</head>
+
+<body>
+<div id="body">
+    {% block header %}
+        <div class="header">
+            <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+                <a class="pure-menu-heading" href="">{{ 'site.slogan'|trans }}</a>
+
+                <em>TODO build real menu:</em>
+                <ul>
+                    <li class="pure-menu-selected"><a href="#">Home</a></li>
+                    <li><a href="#">Tour</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+
+        {% block content_footer %}
+            <div class="l-box ribbon">
+                <h2>{{ 'site.action_attend'|trans }}</h2>
+                <a href="#" class="pure-button primary-button" onclick="alert('This would show a subscription form. Out of scope for this demo.')">Sign up</a>
+            </div>
+        {% endblock %}
+    </div>
+
+    {% block footer %}
+        <div class="footer">
+            {{ 'site.description'|trans }}
+        </div>
+    {% endblock %}
+</div>
+
+</body>
 </html>
