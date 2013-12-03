@@ -35,6 +35,9 @@ class AppKernel extends Kernel
             // other helper bundles
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+
+            // conference website application bundle
+            new Dbu\ConferenceBundle\DbuConferenceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

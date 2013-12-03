@@ -84,6 +84,11 @@ cmf_core:
     multilang:
         locales: %locales%
 
+cmf_simple_cms:
+    routing:
+        templates_by_class:
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
+
 lunetics_locale:
     strict_mode: true
     guessing_order:
