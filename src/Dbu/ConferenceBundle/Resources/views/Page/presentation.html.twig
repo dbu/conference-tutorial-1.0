@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u">
+            <div class="l-box">
+                <h1>{{ cmfMainContent.title }}</h1>
+                <div class="presentation-info">
+                    {{ cmfMainContent.start|date }} -
+                    {{ 'presentation.location'|trans }}: {{ cmfMainContent.parent.title }}
+                </div>
+                <div id="main-content">{{ cmfMainContent.body|raw }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

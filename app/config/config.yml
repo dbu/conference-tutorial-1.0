@@ -87,6 +87,7 @@ cmf_core:
 cmf_simple_cms:
     routing:
         templates_by_class:
+            Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
 
 lunetics_locale:
