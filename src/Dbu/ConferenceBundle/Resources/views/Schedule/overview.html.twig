@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h1>{{ cmfMainContent.title }}</h1>
+                <div id="main-content">{{ cmfMainContent.body|raw }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-g-r content-ribbon">
+        {% for room in rooms %}
+            <div class="pure-u-1-{{ rooms|length }}">
+                <h2 class="track">{{ room.title }}</h2>
+                {% for presentation in room.children %}
+                    {% include "DbuConferenceBundle:Schedule:presentation_preview.html.twig" with {'presentation': presentation} %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

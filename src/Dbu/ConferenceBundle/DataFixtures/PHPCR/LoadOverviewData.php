@@ -46,6 +46,7 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $schedule->setLabel('Schedule');
         $schedule->setTitle('Conference Schedule');
         $schedule->setBody('');
+        $schedule->setDefault('type', 'schedule');
         $manager->persist($schedule);
 
         $schedule = new Page();

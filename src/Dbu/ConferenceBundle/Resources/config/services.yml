@@ -1,3 +1,10 @@
 parameters:
 
 services:
+
+    dbu_conference.controller.schedule:
+        class: Dbu\ConferenceBundle\Controller\ScheduleController
+        arguments:
+            - @doctrine_phpcr.odm.document_manager
+        calls:
+            - [ setContainer, [ @service_container ] ]

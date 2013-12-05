@@ -86,6 +86,8 @@ cmf_core:
 
 cmf_simple_cms:
     routing:
+        controllers_by_type:
+            schedule: dbu_conference.controller.schedule:scheduleAction
         templates_by_class:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig

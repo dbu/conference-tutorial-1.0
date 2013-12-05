@@ -1,0 +1,8 @@
+<div class="pure-g-r">
+    <div class="pure-u">
+        <div class="l-box">
+            {{ presentation.start|date('H:i') }}<br/>
+            <a class="presentation-link" href="{{ path(presentation) }}">{{ presentation.title }}</a>
+        </div>
+    </div>
+</div>
