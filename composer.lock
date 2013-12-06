@@ -2274,17 +2274,17 @@
         },
         {
             "name": "symfony-cmf/simple-cms-bundle",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "target-dir": "Symfony/Cmf/Bundle/SimpleCmsBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/SimpleCmsBundle.git",
-                "reference": "772116ed10e14d7491793bf3109438317cfd1485"
+                "reference": "165e4b8f358dbf8ae48151f9222b662e5c16cea2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/SimpleCmsBundle/zipball/772116ed10e14d7491793bf3109438317cfd1485",
-                "reference": "772116ed10e14d7491793bf3109438317cfd1485",
+                "url": "https://api.github.com/repos/symfony-cmf/SimpleCmsBundle/zipball/165e4b8f358dbf8ae48151f9222b662e5c16cea2",
+                "reference": "165e4b8f358dbf8ae48151f9222b662e5c16cea2",
                 "shasum": ""
             },
             "require": {
@@ -2334,7 +2334,7 @@
                 "Symfony CMF",
                 "cms"
             ],
-            "time": "2013-10-14 15:32:50"
+            "time": "2013-12-06 12:08:52"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
