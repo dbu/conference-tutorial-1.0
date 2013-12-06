@@ -2,6 +2,7 @@
 
 namespace Dbu\ConferenceBundle\Document;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCR;
@@ -20,6 +21,12 @@ class Presentation extends Page
      * Start time of the presentation
      */
     private $start;
+
+    /**
+     * @var Speaker[]|Collection
+     * @PHPCR\ReferenceMany
+     */
+    private $speakers;
 
     public function __construct()
     {
@@ -42,5 +49,31 @@ class Presentation extends Page
     public function getStart()
     {
         return $this->start;
+    }
+
+    /**
+     * @param Speaker[] $speakers
+     */
+    public function setSpeakers($speakers)
+    {
+        $this->speakers = $speakers;
+    }
+
+    /**
+     * @return Speaker[]
+     */
+    public function getSpeakers()
+    {
+        return $this->speakers;
+    }
+
+    public function addSpeaker(Speaker $speaker)
+    {
+        $this->speakers->add($speaker);
+    }
+
+    public function removeSpeaker(Speaker $speaker)
+    {
+        $this->speakers->remove($speaker);
     }
 }

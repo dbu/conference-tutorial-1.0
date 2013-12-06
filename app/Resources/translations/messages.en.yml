@@ -6,3 +6,6 @@ site:
 
 presentation:
     location: Room
+
+speaker:
+    presentations: Presentations

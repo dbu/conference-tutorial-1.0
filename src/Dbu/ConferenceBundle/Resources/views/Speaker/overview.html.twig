@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h1>{{ cmfMainContent.title }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-g-r content-ribbon">
+        {% for speaker in cmfMainContent.children %}
+            <a name="{{ speaker.name }}"></a>
+            <div class="pure-u-1">
+                <div class="l-box">
+                    <h2>{{ speaker.fullname }}</h2>
+                    <div>
+                        {{ speaker.body }}
+                    </div>
+                    <h3>{{ 'speaker.presentations'|trans }}</h3>
+                    <ul>
+                        {% for presentation in speaker.presentations %}
+                            <li><a href="{{ path(presentation) }}">{{ presentation.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

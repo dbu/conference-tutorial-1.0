@@ -1,0 +1,4 @@
+{% for speaker in speakers %}
+    {{ speaker.fullname }}
+    {% if not loop.last %},{% endif %}
+{% endfor %}

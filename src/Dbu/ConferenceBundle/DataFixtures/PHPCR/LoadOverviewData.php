@@ -26,6 +26,7 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
     public function load(ObjectManager $manager)
     {
         $path = $this->container->getParameter('dbu_conference.home_path');
+        $speakersPath = $this->container->getParameter('dbu_conference.speakers_path');
 
         $session = $manager->getPhpcrSession();
         if ($session->nodeExists($path)) {
@@ -49,11 +50,16 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $schedule->setDefault('type', 'schedule');
         $manager->persist($schedule);
 
+        // as the speakersPath is configurable, we need to make sure it exists
+        if (!$manager->find(null, PathHelper::getParentPath($speakersPath))) {
+            NodeHelper::createPath($manager->getPhpcrSession(), PathHelper::getParentPath($speakersPath));
+        }
         $schedule = new Page();
-        $schedule->setPosition($page, 'speakers');
+        $schedule->setId($speakersPath);
         $schedule->setLabel('Speakers');
         $schedule->setTitle('Your friendly speakers');
         $schedule->setBody('');
+        $schedule->setDefault('_template', 'DbuConferenceBundle:Speaker:overview.html.twig');
         $manager->persist($schedule);
 
         $manager->flush();

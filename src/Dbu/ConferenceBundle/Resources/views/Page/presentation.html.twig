@@ -7,7 +7,10 @@
                 <h1>{{ cmfMainContent.title }}</h1>
                 <div class="presentation-info">
                     {{ cmfMainContent.start|date }} -
-                    {{ 'presentation.location'|trans }}: {{ cmfMainContent.parent.title }}
+                    {{ 'presentation.location'|trans }}: {{ cmfMainContent.parent.title }}<br/>
+                    {% include 'DbuConferenceBundle:Speaker:list_compact.html.twig' with {
+                        'speakers': cmfMainContent.speakers
+                    } %}
                 </div>
                 <div id="main-content">{{ cmfMainContent.body|raw }}</div>
             </div>

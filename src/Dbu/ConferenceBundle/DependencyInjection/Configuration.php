@@ -21,6 +21,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('home_path')->defaultValue('/cms/simple')->end()
+                ->scalarNode('speakers_path')->defaultValue('speakers')->end()
             ->end()
         ;
 
