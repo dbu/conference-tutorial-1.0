@@ -11,3 +11,12 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+.header .pure-menu li.current a, .pure-menu li.current-anchestor a {
+    color: green;
+    font-weight: bold;
+}
+
+.header .pure-menu li a:hover, .pure-menu li a:hover {
+    color: green;
+}
