@@ -29,7 +29,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ ]
+    bundles: [ CmfCreateBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -91,6 +91,11 @@ cmf_simple_cms:
         templates_by_class:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
+
+fos_rest:
+    view:
+        formats:
+            json: true
 
 lunetics_locale:
     strict_mode: true

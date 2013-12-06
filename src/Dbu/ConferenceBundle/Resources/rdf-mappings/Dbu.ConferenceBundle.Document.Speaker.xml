@@ -1,0 +1,9 @@
+<type
+        xmlns:schema="http://davidbu/conference"
+        typeof="schema:speaker"
+        >
+    <children>
+        <property property="schema:headline" identifier="fullname"/>
+        <property property="schema:text" identifier="body" />
+    </children>
+</type>

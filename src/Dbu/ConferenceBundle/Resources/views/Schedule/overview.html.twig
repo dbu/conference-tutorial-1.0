@@ -3,10 +3,14 @@
 {% block content %}
     <div class="pure-g-r content-ribbon">
         <div class="pure-u-1">
-            <div class="l-box">
-                <h1>{{ cmfMainContent.title }}</h1>
-                <div id="main-content">{{ cmfMainContent.body|raw }}</div>
+            {% createphp cmfMainContent as="rdf" noautotag %}
+            <div class="l-box" {{ createphp_attributes(rdf) }}>
+                <h1 {{ createphp_attributes( rdf.title ) }}>{{ cmfMainContent.title }}</h1>
+                <div id="main-content" {{ createphp_attributes(rdf.body) }}>
+                    {{ cmfMainContent.body|raw }}
+                </div>
             </div>
+            {% endcreatephp %}
         </div>
     </div>
 

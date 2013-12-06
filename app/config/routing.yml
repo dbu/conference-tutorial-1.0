@@ -1,0 +1,12 @@
+login:
+    path:   /login
+    defaults:  { _controller: DbuConferenceBundle:Security:login }
+login_check:
+    path:   /login_check
+logout:
+    path:   /logout
+
+create:
+    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
+create_image:
+    resource: "@CmfCreateBundle/Resources/config/routing/image.xml"

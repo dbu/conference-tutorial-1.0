@@ -20,3 +20,27 @@
 .header .pure-menu li a:hover, .pure-menu li a:hover {
     color: green;
 }
+
+.user-control {
+    float: right;
+}
+
+.error {
+    padding: 0.5em 1.5em;
+    margin: 0 0 1.5em 0;
+    border: 0 none rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    transition: box-shadow 0.1s linear 0s;
+    background-color: red;
+}
+
+body.admin {
+    padding-top: 62px;
+}
+body.admin .pure-menu-fixed {
+    padding-top: 62px;
+}
+
+.create-ui-toggle {
+    -moz-box-sizing: content-box;
+}

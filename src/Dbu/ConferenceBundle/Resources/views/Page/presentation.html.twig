@@ -3,8 +3,9 @@
 {% block content %}
     <div class="pure-g-r content-ribbon">
         <div class="pure-u">
-            <div class="l-box">
-                <h1>{{ cmfMainContent.title }}</h1>
+            {% createphp cmfMainContent as="rdf" noautotag %}
+            <div class="l-box" {{ createphp_attributes(rdf) }}>
+                <h1 {{ createphp_attributes( rdf.title ) }}>{{ cmfMainContent.title }}</h1>
                 <div class="presentation-info">
                     {{ cmfMainContent.start|date }} -
                     {{ 'presentation.location'|trans }}: {{ cmfMainContent.parent.title }}<br/>
@@ -12,8 +13,11 @@
                         'speakers': cmfMainContent.speakers
                     } %}
                 </div>
-                <div id="main-content">{{ cmfMainContent.body|raw }}</div>
+                <div id="main-content" {{ createphp_attributes(rdf.body) }}>
+                    {{ cmfMainContent.body|raw }}
+                </div>
             </div>
+            {% endcreatephp %}
         </div>
     </div>
 {% endblock %}

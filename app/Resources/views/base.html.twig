@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="/css/pure-min.css">
     <link rel="stylesheet" href="/css/marketing.css">
     <link rel="stylesheet" href="/bundles/dbuconference/css/style.css">
+    {% include "CmfCreateBundle::includecssfiles.html.twig" %}
 </head>
 
-<body>
+<body {% if is_granted('ROLE_ADMIN') %}class="admin"{% endif %}>
 <div id="body">
     {% block header %}
         <div class="header">
@@ -20,6 +21,14 @@
                 <a class="pure-menu-heading" href="{{ path('/cms/simple') }}">{{ 'site.slogan'|trans }}</a>
 
                 {{ knp_menu_render('simple') }}
+
+                <div class="user-control">
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ path('login') }}">Login</a>
+                {% endif %}
+                </div>
             </div>
         </div>
     {% endblock %}
@@ -42,6 +51,11 @@
         </div>
     {% endblock %}
 </div>
+
+{% render(controller(
+    "cmf_create.jsloader.controller:includeJSFilesAction",
+    {'_locale': app.request.locale}
+)) %}
 
 </body>
 </html>

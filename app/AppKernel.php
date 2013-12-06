@@ -23,6 +23,8 @@ class AppKernel extends Kernel
 
             // cmf dependencies
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new FOS\RestBundle\FOSRestBundle(),
 
             // cmf bundles
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
@@ -31,6 +33,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
+            new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
 
             // other helper bundles
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),

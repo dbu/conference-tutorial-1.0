@@ -1,0 +1,8 @@
+<type
+        xmlns:schema="http://davidbu/conference"
+        typeof="schema:schedule"
+        >
+    <children>
+        <property property="schema:headline" identifier="title"/>
+    </children>
+</type>
