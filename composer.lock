@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f822654a85f7aba2c64249ee3771c80d",
+    "hash": "2bd49ad473322e95cf2fe1800cb55ac9",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -740,6 +740,61 @@
                 "phpcr"
             ],
             "time": "2013-10-10 20:54:13"
+        },
+        {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "1.4.1",
+            "target-dir": "FOS/JsRoutingBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "ca856bcd25c8486d42e52279391fcb1dfc288dba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/ca856bcd25c8486d42e52279391fcb1dfc288dba",
+                "reference": "ca856bcd25c8486d42e52279391fcb1dfc288dba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.0",
+                "symfony/framework-bundle": "~2.0",
+                "symfony/serializer": "~2.0",
+                "willdurand/jsonp-callback-validator": "~1.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "Symfony FOSJsRoutingBundle",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing"
+            ],
+            "time": "2013-10-21 13:22:09"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
@@ -2171,6 +2226,85 @@
             "time": "2013-08-21 18:09:35"
         },
         {
+            "name": "sonata-project/admin-bundle",
+            "version": "2.2.8",
+            "target-dir": "Sonata/AdminBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataAdminBundle.git",
+                "reference": "5e15d1fa4e962987f8c44b5f5d1a70ba8211826d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/5e15d1fa4e962987f8c44b5f5d1a70ba8211826d",
+                "reference": "5e15d1fa4e962987f8c44b5f5d1a70ba8211826d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.2",
+                "knplabs/knp-menu-bundle": "~1.1",
+                "sensio/generator-bundle": "~2.2",
+                "sonata-project/block-bundle": "~2.2,>=2.2.7",
+                "sonata-project/exporter": "1.*",
+                "sonata-project/jquery-bundle": "1.8.*",
+                "symfony/class-loader": "~2.2",
+                "symfony/config": "~2.2",
+                "symfony/console": "~2.2",
+                "symfony/form": "~2.2",
+                "symfony/http-foundation": "~2.2",
+                "symfony/routing": "~2.2",
+                "symfony/security-bundle": "~2.2",
+                "symfony/twig-bridge": "~2.2",
+                "symfony/validator": "~2.2",
+                "twig/extensions": "~1.0",
+                "twig/twig": "~1.12"
+            },
+            "require-dev": {
+                "jms/translation-bundle": "*@dev",
+                "sonata-project/intl-bundle": "~2.1",
+                "symfony/yaml": "~2.2"
+            },
+            "suggest": {
+                "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
+                "sonata-project/intl-bundle": "2.1.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\AdminBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataAdminBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataAdminBundle",
+            "homepage": "http://sonata-project.org/bundles/admin",
+            "keywords": [
+                "Admin Generator",
+                "admin",
+                "bootstrap",
+                "sonata"
+            ],
+            "time": "2013-12-05 09:38:25"
+        },
+        {
             "name": "sonata-project/block-bundle",
             "version": "2.2.7",
             "target-dir": "Sonata/BlockBundle",
@@ -2231,6 +2365,172 @@
                 "sonata"
             ],
             "time": "2013-10-24 09:04:49"
+        },
+        {
+            "name": "sonata-project/doctrine-phpcr-admin-bundle",
+            "version": "1.0.1",
+            "target-dir": "Sonata/DoctrinePHPCRAdminBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
+                "reference": "1bbece2b120c5698fd73e671ab3ba62091e4a62b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/1bbece2b120c5698fd73e671ab3ba62091e4a62b",
+                "reference": "1bbece2b120c5698fd73e671ab3ba62091e4a62b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/phpcr-bundle": "1.0.*",
+                "doctrine/phpcr-odm": "1.0.*",
+                "php": ">=5.3.3",
+                "sonata-project/admin-bundle": "~2.2.5",
+                "symfony-cmf/tree-browser-bundle": "1.0.*",
+                "symfony/framework-bundle": "~2.2",
+                "symfony/property-access": "~2.2"
+            },
+            "require-dev": {
+                "jackalope/jackalope-jackrabbit": "dev-master"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\DoctrinePHPCRAdminBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataDoctrinePHPCRAdminBundle/contributors"
+                },
+                {
+                    "name": "Nacho Martin",
+                    "email": "nacho.martin@gmail.com",
+                    "homepage": "http://nacho-martin.com"
+                }
+            ],
+            "description": "Symfony Sonata / Integrate Doctrine PHPCR into the SonataAdminBundle",
+            "keywords": [
+                "Admin Generator",
+                "admin",
+                "bootstrap",
+                "sonata"
+            ],
+            "time": "2013-11-12 15:39:03"
+        },
+        {
+            "name": "sonata-project/exporter",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/exporter.git",
+                "reference": "dad681274e09854a972a0c882ebddd095b7837be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/exporter/zipball/dad681274e09854a972a0c882ebddd095b7837be",
+                "reference": "dad681274e09854a972a0c882ebddd095b7837be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "propel/propel1": "~1.6",
+                "symfony/property-access": "~2.2",
+                "symfony/routing": "*"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "propel/propel1": "~1.6",
+                "symfony/property-access": "~2.2",
+                "symfony/routing": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Exporter": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@gmail.com",
+                    "homepage": "http://sonata-project.org/"
+                }
+            ],
+            "description": "Lightweight Exporter library",
+            "homepage": "https://github.com/sonata-project/Exporter",
+            "keywords": [
+                "client",
+                "csv",
+                "data",
+                "export",
+                "xls"
+            ],
+            "time": "2013-10-24 13:43:33"
+        },
+        {
+            "name": "sonata-project/jquery-bundle",
+            "version": "1.8.3",
+            "target-dir": "Sonata/jQueryBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonatajQueryBundle.git",
+                "reference": "1b6dde1becb93b801e64b20e96bc76a110ead712"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonatajQueryBundle/zipball/1b6dde1becb93b801e64b20e96bc76a110ead712",
+                "reference": "1b6dde1becb93b801e64b20e96bc76a110ead712",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\jQueryBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonatajQueryBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonatajQueryBundle",
+            "homepage": "http://sonata-project.org/bundles/jquery",
+            "keywords": [
+                "jquery",
+                "sonata"
+            ],
+            "time": "2013-03-01 17:24:02"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2896,6 +3196,63 @@
             "time": "2013-10-14 15:35:09"
         },
         {
+            "name": "symfony-cmf/tree-browser-bundle",
+            "version": "1.0.0",
+            "target-dir": "Symfony/Cmf/Bundle/TreeBrowserBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/TreeBrowserBundle.git",
+                "reference": "e6f077539e0e3fa91e16be3d9f26b898e1d186b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/TreeBrowserBundle/zipball/e6f077539e0e3fa91e16be3d9f26b898e1d186b2",
+                "reference": "e6f077539e0e3fa91e16be3d9f26b898e1d186b2",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/jsrouting-bundle": "~1.1",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.2"
+            },
+            "require-dev": {
+                "symfony-cmf/testing": "1.0.*"
+            },
+            "suggest": {
+                "doctrine/phpcr-bundle": "1.0.*",
+                "doctrine/phpcr-odm": "1.0.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Cmf\\Bundle\\TreeBrowserBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/TreeBrowserBundle/contributors"
+                }
+            ],
+            "description": "Symfony CMF Tree Browser Bundle",
+            "homepage": "http://cmf.symfony.com",
+            "keywords": [
+                "Symfony CMF",
+                "phpcr",
+                "tree"
+            ],
+            "time": "2013-10-09 09:36:52"
+        },
+        {
             "name": "symfony/assetic-bundle",
             "version": "v2.3.0",
             "target-dir": "Symfony/Bundle/AsseticBundle",
@@ -3322,6 +3679,46 @@
                 "templating"
             ],
             "time": "2013-10-30 08:20:53"
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/JsonpCallbackValidator.git",
+                "reference": "58c0a6c76718794856f7049cf066fdda4e984c49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/JsonpCallbackValidator/zipball/58c0a6c76718794856f7049cf066fdda4e984c49",
+                "reference": "58c0a6c76718794856f7049cf066fdda4e984c49",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William DURAND",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                }
+            ],
+            "description": "JSONP callback validator.",
+            "time": "2013-10-21 12:01:32"
         },
         {
             "name": "willdurand/negotiation",

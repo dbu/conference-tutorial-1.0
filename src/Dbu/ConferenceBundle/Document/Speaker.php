@@ -49,4 +49,9 @@ class Speaker extends Page
     {
         return $this->presentations;
     }
+
+    public function __toString()
+    {
+        return $this->getFullname();
+    }
 }

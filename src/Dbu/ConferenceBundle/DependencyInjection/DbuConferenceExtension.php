@@ -29,6 +29,9 @@ class DbuConferenceExtension extends Extension
         $speakerPath = PathHelper::absolutizePath($config['speakers_path'], $config['home_path']);
         $container->setParameter($this->getAlias() . '.speakers_path', $speakerPath);
 
+        $roomsPath = PathHelper::absolutizePath($config['rooms_path'], $config['home_path']);
+        $container->setParameter($this->getAlias() . '.rooms_path', $roomsPath);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }

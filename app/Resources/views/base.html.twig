@@ -22,13 +22,14 @@
 
                 {{ knp_menu_render('simple') }}
 
-                <div class="user-control">
+                <ul class="user-control">
                 {% if is_granted('ROLE_USER') %}
-                    <a href="{{ path('logout') }}">Logout</a>
+                    <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
+                    <li> <a href="{{ path('logout') }}">Logout</a></li>
                 {% else %}
-                    <a href="{{ path('login') }}">Login</a>
+                    <li><a href="{{ path('login') }}">Login</a></li>
                 {% endif %}
-                </div>
+                </ul>
             </div>
         </div>
     {% endblock %}

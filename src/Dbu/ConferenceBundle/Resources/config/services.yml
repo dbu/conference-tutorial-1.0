@@ -16,3 +16,39 @@ services:
             - %dbu_conference.speakers_path%
         tags:
             - { name: twig.extension }
+
+    dbu_conference.admin.room:
+        class: Dbu\ConferenceBundle\Admin\RoomAdmin
+        arguments:
+            - ~
+            - Dbu\ConferenceBundle\Document\Room
+            - SonataAdminBundle:CRUD
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+            - [ setRootPath, [ %dbu_conference.rooms_path% ] ]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: dashboard.group_content, label_catalogue: "DbuConferenceBundle", label: "Rooms", label_translator_strategy: sonata.admin.label.strategy.underscore }
+
+    dbu_conference.admin.speaker:
+        class: Dbu\ConferenceBundle\Admin\SpeakerAdmin
+        arguments:
+            - ~
+            - Dbu\ConferenceBundle\Document\Speaker
+            - SonataAdminBundle:CRUD
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+            - [ setRootPath, [ %dbu_conference.speakers_path% ] ]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: dashboard.group_content, label_catalogue: "DbuConferenceBundle", label: "Speakers", label_translator_strategy: sonata.admin.label.strategy.underscore }
+
+    dbu_conference.admin.presentation:
+        class: Dbu\ConferenceBundle\Admin\PresentationAdmin
+        arguments:
+            - ~
+            - Dbu\ConferenceBundle\Document\Presentation
+            - SonataAdminBundle:CRUD
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+            - [ setRootPath, [ %dbu_conference.rooms_path% ] ]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: dashboard.group_content, label_catalogue: "DbuConferenceBundle", label: "Presentations", label_translator_strategy: sonata.admin.label.strategy.underscore }

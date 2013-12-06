@@ -39,6 +39,14 @@ class AppKernel extends Kernel
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
 
+            // sonata editing
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
             // conference website application bundle
             new Dbu\ConferenceBundle\DbuConferenceBundle(),
         );

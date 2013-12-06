@@ -37,5 +37,8 @@ class Room extends Page
         return $this->description;
     }
 
-
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

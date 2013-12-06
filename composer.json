@@ -36,6 +36,8 @@
         "symfony-cmf/simple-cms-bundle": "1.0.*",
         "symfony-cmf/create-bundle": "1.0.*",
 
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
+
         "lunetics/locale-bundle": "2.2.*",
         "liip/imagine-bundle": "~0.12"
     },

@@ -2,6 +2,7 @@
 
 namespace Dbu\ConferenceBundle\Document;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 
@@ -24,7 +25,7 @@ class Presentation extends Page
 
     /**
      * @var Speaker[]|Collection
-     * @PHPCR\ReferenceMany
+     * @PHPCR\ReferenceMany(targetDocument="Dbu\ConferenceBundle\Document\Speaker")
      */
     private $speakers;
 
@@ -33,6 +34,7 @@ class Presentation extends Page
         parent::__construct();
 
         $this->start = new \DateTime();
+        $this->speakers = new ArrayCollection();
     }
 
     /**
@@ -74,6 +76,11 @@ class Presentation extends Page
 
     public function removeSpeaker(Speaker $speaker)
     {
-        $this->speakers->remove($speaker);
+        $this->speakers->removeElement($speaker);
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 }

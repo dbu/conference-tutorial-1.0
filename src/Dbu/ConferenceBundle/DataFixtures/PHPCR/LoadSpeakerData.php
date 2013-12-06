@@ -72,7 +72,7 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
             array(
                 'slug' => 'william-durand',
                 'presentation' => 'build-awesome-rest-apis-with-symfony2',
-                'fullname' => ' William Durand',
+                'fullname' => 'William Durand',
                 'body' => 'Student by day, full stack developer by night. Open-Source evangelist all the time.',
             ),
             array(
