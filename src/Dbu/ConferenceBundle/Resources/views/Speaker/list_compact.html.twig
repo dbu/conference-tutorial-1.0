@@ -1,4 +1,4 @@
 {% for speaker in speakers %}
-    {{ speaker.fullname }}
+    <a href="{{ speaker_path(speaker) }}">{{ speaker.fullname }}</a>
     {% if not loop.last %},{% endif %}
 {% endfor %}

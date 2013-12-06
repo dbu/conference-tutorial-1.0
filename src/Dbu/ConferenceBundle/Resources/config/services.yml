@@ -8,3 +8,10 @@ services:
             - @doctrine_phpcr.odm.document_manager
         calls:
             - [ setContainer, [ @service_container ] ]
+
+    dbu_conference.twig.extension:
+        class: Dbu\ConferenceBundle\Twig\Extension\ConferenceExtension
+        arguments:
+            - @router
+        tags:
+            - { name: twig.extension }
