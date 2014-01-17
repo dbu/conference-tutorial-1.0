@@ -17,6 +17,13 @@ services:
         tags:
             - { name: twig.extension }
 
+    dbu_conference.security.presentation_voter:
+        class: Dbu\ConferenceBundle\PublishWorkflow\Voter\PresentationVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: cmf_published_voter, priority: 10 }
+
     dbu_conference.admin.room:
         class: Dbu\ConferenceBundle\Admin\RoomAdmin
         arguments:

@@ -1,9 +1,11 @@
 {% for speaker in speakers %}
-    <a href="{{ speaker_path(speaker) }}">
-        {% if speaker.portrait %}
-            <img class="portrait" src="{{ speaker.portrait.id | imagine_filter('portrait_small') }}" alt="{{ speaker.fullname }}"/>
-        {% endif %}
-        {{ speaker.fullname }}
-    </a>
-    {% if not loop.last %},{% endif %}
+    {% if cmf_is_published(speaker) %}
+        <a href="{{ speaker_path(speaker) }}">
+            {% if speaker.portrait %}
+                <img class="portrait" src="{{ speaker.portrait.id | imagine_filter('portrait_small') }}" alt="{{ speaker.fullname }}"/>
+            {% endif %}
+            {{ speaker.fullname }}
+        </a>
+        {% if not loop.last %},{% endif %}
+    {% endif %}
 {% endfor %}

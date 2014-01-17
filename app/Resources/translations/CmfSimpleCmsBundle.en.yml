@@ -3,10 +3,14 @@ breadcrumb:
     link_room_list: Rooms
     link_speaker_list: Speakers
 
+label_confirmed: Speaker Confirmed
+label_room_title: Room Name
+
 form:
     label_speakers: Speakers
     label_description: Description
     label_portrait: Portrait
+    label_presentation_room: Room
 
 list:
     label_publish_start_date: Publication Start

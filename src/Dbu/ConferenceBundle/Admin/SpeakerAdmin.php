@@ -14,7 +14,7 @@ class SpeakerAdmin extends PageAdmin
         $listMapper
             ->addIdentifier('fullname')
             ->add('presentations')
-            ->add('createDate', 'date')
+            ->add('publishable', null, array('label' => 'label_confirmed'))
             ->add('publishStartDate', 'date')
             ->add('publishEndDate', 'date')
         ;
@@ -41,6 +41,14 @@ class SpeakerAdmin extends PageAdmin
             ->remove('addFormatPattern')
             ->remove('addTrailingSlash')
             ->remove('addLocalePattern')
+            ->remove('label')
+            ->remove('createDate')
+        ;
+
+        $formMapper
+            ->with('form.group_publish_workflow')
+                ->add('publishable', null, array('label' => 'label_confirmed', 'required' => false))
+            ->end()
         ;
     }
 

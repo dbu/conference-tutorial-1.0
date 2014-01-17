@@ -12,11 +12,8 @@ class RoomAdmin extends PageAdmin
     public function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('title')
+            ->addIdentifier('title', null, array('label' => 'label_room_title'))
             ->add('description')
-            ->add('createDate', 'date')
-            ->add('publishStartDate', 'date')
-            ->add('publishEndDate', 'date')
         ;
     }
 
@@ -27,6 +24,7 @@ class RoomAdmin extends PageAdmin
         $formMapper
             ->with('form.group_general')
                 ->remove('parent')
+                ->add('title', null, array('label' => 'label_room_title'))
                 ->add('description')
             ->end()
         ;
@@ -35,6 +33,8 @@ class RoomAdmin extends PageAdmin
             ->remove('addFormatPattern')
             ->remove('addTrailingSlash')
             ->remove('addLocalePattern')
+            ->remove('label')
+            ->remove('createDate')
         ;
     }
 

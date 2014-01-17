@@ -16,9 +16,6 @@ class PresentationAdmin extends PageAdmin
             ->addIdentifier('title')
             ->add('speakers')
             ->add('parent')
-            ->add('createDate', 'date')
-            ->add('publishStartDate', 'date')
-            ->add('publishEndDate', 'date')
         ;
     }
 
@@ -35,6 +32,7 @@ class PresentationAdmin extends PageAdmin
                         'choices' => $this->getRooms(),
                         'class' => 'Dbu\ConferenceBundle\Document\Room',
                         'property' => 'title',
+                        'label' => 'form.label_presentation_room'
                 ))
                 ->add(
                     'speakers',
@@ -53,6 +51,8 @@ class PresentationAdmin extends PageAdmin
             ->remove('addFormatPattern')
             ->remove('addTrailingSlash')
             ->remove('addLocalePattern')
+            ->remove('label')
+            ->remove('createDate')
         ;
     }
 

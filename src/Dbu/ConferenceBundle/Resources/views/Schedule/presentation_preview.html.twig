@@ -2,10 +2,14 @@
     <div class="pure-u">
         <div class="l-box">
             {{ presentation.start|date('H:i') }}<br/>
-            <a class="presentation-link" href="{{ path(presentation) }}">{{ presentation.title }}</a><br/>
-            {% include 'DbuConferenceBundle:Speaker:list_compact.html.twig' with {
-                'speakers': presentation.speakers
-            } %}
+            {% if cmf_is_published(presentation) %}
+                <a class="presentation-link" href="{{ path(presentation) }}">{{ presentation.title }}</a><br/>
+                {% include 'DbuConferenceBundle:Speaker:list_compact.html.twig' with {
+                    'speakers': presentation.speakers
+                } %}
+            {% else %}
+                <em>{{ 'presentation.unpublished'|trans }}</em>
+            {% endif %}
         </div>
     </div>
 </div>

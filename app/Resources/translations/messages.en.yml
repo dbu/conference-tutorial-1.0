@@ -6,6 +6,7 @@ site:
 
 presentation:
     location: Room
+    unpublished: To be confirmed
 
 speaker:
     presentations: Presentations
