@@ -28,6 +28,12 @@ class SpeakerAdmin extends PageAdmin
             ->with('form.group_general')
                 ->remove('parent')
                 ->add('title', null, array('label' => 'Full name'))
+                ->add('portrait',
+                    'cmf_media_image',
+                    array(
+                        'required' => false,
+                    )
+                )
             ->end()
         ;
 

@@ -1,10 +1,12 @@
 breadcrumb:
     link_presentation_list: Presentations
     link_room_list: Rooms
+    link_speaker_list: Speakers
 
 form:
     label_speakers: Speakers
     label_description: Description
+    label_portrait: Portrait
 
 list:
     label_publish_start_date: Publication Start

@@ -25,6 +25,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'CmfMediaBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -92,6 +95,32 @@ cmf_simple_cms:
         templates_by_class:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
+
+cmf_media:
+    imagine_filters:
+        upload_thumbnail: image_upload_thumbnail
+    extra_filters:
+        - portrait_small
+        - portrait_large
+
+liip_imagine:
+    filter_sets:
+        portrait_small:
+            data_loader: cmf_media_doctrine_phpcr
+            format: jpg
+            filters:
+                thumbnail: { size: [30, 30], mode: outbound }
+        portrait_large:
+            data_loader: cmf_media_doctrine_phpcr
+            format: jpg
+            filters:
+                upscale: { min: [130, 130] }
+                thumbnail: { size: [130, 130], mode: outbound }
+        image_upload_thumbnail:
+            data_loader: cmf_media_doctrine_phpcr
+            format: jpg
+            filters:
+                thumbnail: { size: [120, 120], mode: outbound }
 
 fos_rest:
     view:

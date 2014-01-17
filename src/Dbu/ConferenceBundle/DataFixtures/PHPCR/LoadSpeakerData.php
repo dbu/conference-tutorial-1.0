@@ -9,8 +9,8 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\DocumentManager;
+use Symfony\Cmf\Bundle\MediaBundle\Doctrine\Phpcr\Image;
 use Dbu\ConferenceBundle\Document\Presentation;
-
 
 class LoadSpeakerData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -50,6 +50,17 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
         $speaker->setPosition($parent, $data['slug']);
         $speaker->setFullname($data['fullname']);
         $speaker->setBody($data['body']);
+        if (isset($data['portrait'])) {
+            $image = new Image();
+            $image->setFileContentFromFilesystem(
+                __DIR__ .
+                DIRECTORY_SEPARATOR .
+                'images' .
+                DIRECTORY_SEPARATOR .
+                $data['portrait']
+            );
+            $speaker->setPortrait($image);
+        }
 
         /** @var $presentation Presentation */
         $presentation = $room->getChildren()->get($data['presentation']);
@@ -68,18 +79,21 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
                 'presentation' => 'diving-deep-into-twig',
                 'fullname' => 'Matthias Noback',
                 'body' => 'In 2002 I started as a freelance web designer and went from HTML to JavaScript, to PHP. Since 2004 I run my own company - Plato Webdesign. After several years of working solo, I became a web developer for Driebit (Amsterdam) and made myself familiar with symfony 1.0, up until 1.4. With the arrival of Symfony2, it has become clear that the world of PHP should be taken more seriously every day.',
+                'portrait' => 'matthias-noback.jpg',
             ),
             array(
                 'slug' => 'william-durand',
                 'presentation' => 'build-awesome-rest-apis-with-symfony2',
                 'fullname' => 'William Durand',
                 'body' => 'Student by day, full stack developer by night. Open-Source evangelist all the time.',
+                'portrait' => 'william-durand.jpg',
             ),
             array(
                 'slug' => 'lukas-kahwe-smith',
                 'presentation' => 'build-awesome-rest-apis-with-symfony2',
                 'fullname' => 'Lukas Kahwe Smith',
                 'body' => 'I have been involved in PEAR, PHP internals, Doctrine and as of late mostly with Symfony2, especially the CMF initiative.',
+                'portrait' => 'lukas-kahwe-smith.jpg',
             ),
             array(
                 'slug' => 'gediminas-morkevicius',

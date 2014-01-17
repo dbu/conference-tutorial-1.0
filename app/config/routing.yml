@@ -11,6 +11,10 @@ create:
 create_image:
     resource: "@CmfCreateBundle/Resources/config/routing/image.xml"
 
+_imagine:
+    resource: .
+    type:     imagine
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

@@ -12,6 +12,15 @@
     font-weight: bold;
 }
 
+.speaker .portrait {
+    margin: 1.4em 0.7em 0 0;
+    float: left;
+}
+
+.speaker h3 {
+    clear: both;
+}
+
 .header .pure-menu li.current a, .pure-menu li.current-anchestor a {
     color: green;
     font-weight: bold;

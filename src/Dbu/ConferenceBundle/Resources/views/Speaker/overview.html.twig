@@ -16,7 +16,10 @@
             <a name="{{ speaker.name }}"></a>
             {% createphp speaker as="rdf" noautotag %}
             <div class="pure-u-1" {{ createphp_attributes(rdf) }}>
-                <div class="l-box">
+                <div class="l-box speaker">
+                    {% if speaker.portrait %}
+                        <img class="portrait" src="{{ speaker.portrait.id | imagine_filter('portrait_large') }}" alt="{{ speaker.fullname }}"/>
+                    {% endif %}
                     <h2 {{ createphp_attributes( rdf.fullname ) }}>
                         {{ speaker.fullname }}
                     </h2>
