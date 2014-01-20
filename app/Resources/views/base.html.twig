@@ -34,17 +34,30 @@
         </div>
     {% endblock %}
 
-    <div class="content">
-        {% block content %}
-        {% endblock %}
 
-        {% block content_footer %}
-            <div class="l-box ribbon">
-                <h2>{{ 'site.action_attend'|trans }}</h2>
-                <a href="#" class="pure-button primary-button" onclick="alert('This would show a subscription form. Out of scope for this demo.')">Sign up</a>
-            </div>
-        {% endblock %}
+    <div class="pure-g-r content-ribbon">
+        <div class="content pure-u-5-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="sidebar pure-u-1-6">
+            {% block sidebar %}
+                {% if cmfMainContent is defined and cmfMainContent.additionalInfoBlock is defined and cmfMainContent.additionalInfoBlock %}
+                    {{ sonata_block_render(cmfMainContent.additionalInfoBlock) }}
+                {% else %}
+                    {{ sonata_block_render({'name': '/cms/content/default/additionalInfoBlock'}) }}
+                {% endif %}
+            {% endblock %}
+        </div>
     </div>
+
+    {% block content_footer %}
+        <div class="l-box ribbon">
+            <h2>{{ 'site.action_attend'|trans }}</h2>
+            <a href="#" class="pure-button primary-button" onclick="alert('This would show a subscription form. Out of scope for this demo.')">Sign up</a>
+        </div>
+    {% endblock %}
 
     {% block footer %}
         <div class="footer">

@@ -2,8 +2,11 @@
 
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
+use Dbu\ConferenceBundle\Document\Room;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock;
+use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\DocumentManager;
@@ -34,6 +37,21 @@ class LoadPresentationData extends ContainerAware implements FixtureInterface, O
         foreach ($this->getSecondRoomData() as $data) {
             $this->createPresentation($manager, $room, $data);
         }
+
+        $manager->flush();
+
+        // we flush, before flushing the children of the room are not populated.
+        $presentation = $rooms->getChildren()->first()->getChildren()->first();
+        $additionalInfo = new ContainerBlock();
+        $additionalInfo->setParentDocument($presentation);
+        $additionalInfo->setName('additionalInfoBlock');
+        $manager->persist($additionalInfo);
+
+        $simple = new SimpleBlock();
+        $additionalInfo->addChild($simple);
+        $simple->setName('note');
+        $simple->setTitle('Preparation');
+        $simple->setBody('If you want to make the most out of this talk, make sure to read the introduction chapter of the <a href="http://twig.sensiolabs.org/">official twig documentation</a> before the conference.');
 
         $manager->flush();
     }

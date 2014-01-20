@@ -4,6 +4,7 @@ namespace Dbu\ConferenceBundle\Document;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Sonata\BlockBundle\Model\BlockInterface;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCR;
@@ -28,6 +29,16 @@ class Presentation extends Page
      * @PHPCR\ReferenceMany(targetDocument="Dbu\ConferenceBundle\Document\Speaker")
      */
     private $speakers;
+
+    /**
+     * This will usually be a ContainerBlock but can be any block that will be
+     * rendered in the additionalInfoBlock area.
+     *
+     * @PHPCR\Child
+     *
+     * @var BlockInterface
+     */
+    protected $additionalInfoBlock;
 
     public function __construct()
     {
@@ -77,6 +88,16 @@ class Presentation extends Page
     public function removeSpeaker(Speaker $speaker)
     {
         $this->speakers->removeElement($speaker);
+    }
+
+    public function getAdditionalInfoBlock()
+    {
+        return $this->additionalInfoBlock;
+    }
+
+    public function setAdditionalInfoBlock($block)
+    {
+        $this->additionalInfoBlock = $block;
     }
 
     public function __toString()

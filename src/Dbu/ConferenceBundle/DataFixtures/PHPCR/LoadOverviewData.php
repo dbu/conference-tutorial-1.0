@@ -5,6 +5,8 @@ namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use PHPCR\Util\PathHelper;
+use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock;
+use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -33,7 +35,15 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
             $session->getNode($path)->remove();
             $manager->flush();
         } else {
-            NodeHelper::createPath($manager->getPhpcrSession(), PathHelper::getParentPath($path));
+            NodeHelper::createPath($session, PathHelper::getParentPath($path));
+        }
+
+        if ($session->nodeExists('/cms/content/default')) {
+            foreach ($session->getNode('/cms/content/default')->getNodes() as $node) {
+                $node->remove();
+            }
+        } else {
+            NodeHelper::createPath($session, '/cms/content/default');
         }
 
         $page = new Page();
@@ -61,6 +71,17 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $schedule->setBody('');
         $schedule->setDefault('_template', 'DbuConferenceBundle:Speaker:overview.html.twig');
         $manager->persist($schedule);
+
+        $additionalInfo = new ContainerBlock();
+        $additionalInfo->setParentDocument($manager->find(null, '/cms/content/default'));
+        $additionalInfo->setName('additionalInfoBlock');
+        $manager->persist($additionalInfo);
+
+        $simple = new SimpleBlock();
+        $additionalInfo->addChild($simple); // persist is cascaded
+        $simple->setName('note');
+        $simple->setTitle('We have cookies');
+        $simple->setBody('Not sure if you want to attend the conference? Let us tell you that we have cookies so you\'d better attend!');
 
         $manager->flush();
     }

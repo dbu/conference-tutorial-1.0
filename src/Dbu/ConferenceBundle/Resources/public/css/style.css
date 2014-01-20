@@ -30,6 +30,10 @@
     color: green;
 }
 
+.sidebar {
+    margin-top: 160px;
+}
+
 .user-control {
     float: right;
 }

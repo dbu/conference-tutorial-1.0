@@ -41,5 +41,25 @@ sonata_doctrine_phpcr_admin:
         Dbu\ConferenceBundle\Document\Room:
              valid_children:
                  - Dbu\ConferenceBundle\Document\Presentation
-        Dbu\ConferenceBundle\Document\Presentation: ~
+        Dbu\ConferenceBundle\Document\Presentation:
+             valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
         Dbu\ConferenceBundle\Document\Speaker: ~
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock: ~
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock: ~
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock: ~
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock: ~
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock: ~
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock

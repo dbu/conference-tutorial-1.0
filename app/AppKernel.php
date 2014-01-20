@@ -34,6 +34,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
+            new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
 
             // other helper bundles
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
