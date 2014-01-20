@@ -8,6 +8,7 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use PHPCR\Util\PathHelper;
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock;
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock;
+use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -72,6 +73,13 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $schedule->setBody('');
         $schedule->setDefault('_template', 'DbuConferenceBundle:Speaker:overview.html.twig');
         $manager->persist($schedule);
+
+        // add menu entry for our application page
+        $menu = new MenuNode();
+        $menu->setPosition($page, 'subscribe');
+        $menu->setLabel('Sign up');
+        $menu->setRoute('dbu_conference_subscribe');
+        $manager->persist($menu);
 
         $additionalInfo = new ContainerBlock();
         $additionalInfo->setParentDocument($manager->find(null, '/cms/content/default'));

@@ -76,3 +76,13 @@ body.admin .pure-menu-fixed {
 .create-ui-toggle {
     -moz-box-sizing: content-box;
 }
+
+.flash-notice {
+    margin: 5em 5em -5em 5em;
+    padding: 1em;
+    clear:		both;
+    border: thin solid #afa;
+    background: #efe;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}

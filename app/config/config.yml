@@ -96,6 +96,11 @@ cmf_simple_cms:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
 
+cmf_menu:
+    persistence:
+        phpcr:
+            menu_basepath: /cms
+
 cmf_block:
     persistence:
         phpcr:

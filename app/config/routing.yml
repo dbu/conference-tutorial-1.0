@@ -6,6 +6,10 @@ login_check:
 logout:
     path:   /logout
 
+dbu_conference_subscribe:
+    path: /subscribe
+    defaults: { _controller: DbuConferenceBundle:Subscribe:subscribe }
+
 create:
     resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
 create_image:

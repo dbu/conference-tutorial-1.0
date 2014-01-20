@@ -34,6 +34,11 @@
         </div>
     {% endblock %}
 
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="l-box ribbon flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
 
     <div class="pure-g-r content-ribbon">
         <div class="content pure-u-5-6">
@@ -55,7 +60,7 @@
     {% block content_footer %}
         <div class="l-box ribbon">
             <h2>{{ 'site.action_attend'|trans }}</h2>
-            <a href="#" class="pure-button primary-button" onclick="alert('This would show a subscription form. Out of scope for this demo.')">Sign up</a>
+            <a href="{{ path('dbu_conference_subscribe') }}" class="pure-button primary-button">Sign up</a>
         </div>
     {% endblock %}
 

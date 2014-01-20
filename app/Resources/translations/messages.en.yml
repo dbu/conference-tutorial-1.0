@@ -5,6 +5,7 @@ site:
     action_attend: Want to attend the conference?
     recent: Recent adds
     no_recent: Nothing confirmed yet, please check back later.
+    subscribe: Sign up to attend the conference
 
 presentation:
     location: Room
