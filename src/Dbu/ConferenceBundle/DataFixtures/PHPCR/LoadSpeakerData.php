@@ -61,6 +61,7 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
             );
             $speaker->setPortrait($image);
         }
+        $speaker->setPublishStartDate($data['publishStartDate']);
 
         /** @var $presentation Presentation */
         $presentation = $room->getChildren()->get($data['presentation']);
@@ -80,6 +81,7 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
                 'fullname' => 'Matthias Noback',
                 'body' => 'In 2002 I started as a freelance web designer and went from HTML to JavaScript, to PHP. Since 2004 I run my own company - Plato Webdesign. After several years of working solo, I became a web developer for Driebit (Amsterdam) and made myself familiar with symfony 1.0, up until 1.4. With the arrival of Symfony2, it has become clear that the world of PHP should be taken more seriously every day.',
                 'portrait' => 'matthias-noback.jpg',
+                'publishStartDate' => new \DateTime('2013-12-10'),
             ),
             array(
                 'slug' => 'william-durand',
@@ -87,6 +89,7 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
                 'fullname' => 'William Durand',
                 'body' => 'Student by day, full stack developer by night. Open-Source evangelist all the time.',
                 'portrait' => 'william-durand.jpg',
+                'publishStartDate' => new \DateTime('2013-12-09'),
             ),
             array(
                 'slug' => 'lukas-kahwe-smith',
@@ -94,24 +97,28 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
                 'fullname' => 'Lukas Kahwe Smith',
                 'body' => 'I have been involved in PEAR, PHP internals, Doctrine and as of late mostly with Symfony2, especially the CMF initiative.',
                 'portrait' => 'lukas-kahwe-smith.jpg',
+                'publishStartDate' => new \DateTime('2013-12-08'),
             ),
             array(
                 'slug' => 'gediminas-morkevicius',
                 'presentation' => 'increase-productivity-with-doctrine2-extensions',
                 'fullname' => 'Gediminas Morkevicius',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-07'),
             ),
             array(
                 'slug' => 'david-buchmann',
                 'presentation' => 'symfony2-content-management-in-40-minutes',
                 'fullname' => 'David Buchmann',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-06'),
             ),
             array(
                 'slug' => 'ryan-weaver',
                 'presentation' => 'cool-like-frontend-developer',
                 'fullname' => 'Ryan Weaver',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-05'),
             ),
         );
     }
@@ -124,30 +131,35 @@ class LoadSpeakerData extends ContainerAware implements FixtureInterface, Ordere
                 'presentation' => 'how-to-automatize-your-infrastructure-with-chef',
                 'fullname' => 'Grégoire Pineau',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-05'),
             ),
             array(
                 'slug' => 'piotr-pasich',
                 'presentation' => 'simplify-your-code-with-annotations',
                 'fullname' => 'Piotr Pasich',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-04'),
             ),
             array(
                 'slug' => 'kris-wallsmith',
                 'presentation' => 'how-kris-writes-symfony-apps',
                 'fullname' => 'Kris Wallsmith',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-03'),
             ),
             array(
                 'slug' => 'john-la',
                 'presentation' => 'pitching-symfony-to-your-client',
                 'fullname' => 'John La',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-02'),
             ),
             array(
                 'slug' => 'cathy-theys',
                 'presentation' => 'community-building-with-mentoring',
                 'fullname' => 'Cathy Theys',
                 'body' => '...',
+                'publishStartDate' => new \DateTime('2013-12-01'),
             ),
         );
     }

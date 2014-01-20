@@ -3,6 +3,8 @@ site:
     slogan: Conference Site
     description:  This is a demo website to show how to build a website with the Symfony2 CMF.
     action_attend: Want to attend the conference?
+    recent: Recent adds
+    no_recent: Nothing confirmed yet, please check back later.
 
 presentation:
     location: Room

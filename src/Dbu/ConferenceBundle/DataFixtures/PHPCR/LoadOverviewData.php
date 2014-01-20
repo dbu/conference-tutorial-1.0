@@ -2,6 +2,7 @@
 
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
+use Dbu\ConferenceBundle\Document\RecentlyAddedBlock;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use PHPCR\Util\PathHelper;
@@ -82,6 +83,10 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $simple->setName('note');
         $simple->setTitle('We have cookies');
         $simple->setBody('Not sure if you want to attend the conference? Let us tell you that we have cookies so you\'d better attend!');
+
+        $recent = new RecentlyAddedBlock();
+        $additionalInfo->addChild($recent);
+        $recent->setName('presentations');
 
         $manager->flush();
     }

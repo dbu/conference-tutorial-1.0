@@ -1,2 +1,21 @@
 dashboard:
     group_content: Content
+
+breadcrumb:
+    link_recently_added_block_list: Recently Added Blocks
+
+form:
+    group_general: General
+    label_parent_document: Parent
+    label_name: Name
+    label_class: Type of content
+    label_limit: Show last
+
+list:
+    label_parent_document: Parent
+    label_name: Name
+    label_class: Type of content
+
+filter:
+    label_name: Name
+    label_class: Type of content

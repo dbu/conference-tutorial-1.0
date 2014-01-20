@@ -1,0 +1,14 @@
+<h2>{{ "site.recent"|trans }}</h2>
+
+{% if items %}
+    <ul>
+        {% for item in items %}
+            <li>
+                <span class="date">{{ item.publishStartDate|date('j.n.Y') }}</span>
+                <a href="{{ path(item) }}">{{ item.title }}</a><br/>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{ "site.no_recent"|trans }}</p>
+{% endif %}

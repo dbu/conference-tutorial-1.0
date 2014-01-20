@@ -46,7 +46,9 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Dbu\ConferenceBundle\Document\RecentlyAddedBlock
         Dbu\ConferenceBundle\Document\Speaker: ~
+        Dbu\ConferenceBundle\Document\RecentlyAddedBlock: ~
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock: ~
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock: ~
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock: ~
@@ -63,3 +65,4 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
+                - Dbu\ConferenceBundle\Document\RecentlyAddedBlock

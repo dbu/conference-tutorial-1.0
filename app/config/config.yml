@@ -96,6 +96,11 @@ cmf_simple_cms:
             Dbu\ConferenceBundle\Document\Presentation: DbuConferenceBundle:Page:presentation.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: DbuConferenceBundle:Page:index.html.twig
 
+cmf_block:
+    persistence:
+        phpcr:
+            block_basepath: /cms
+
 cmf_media:
     imagine_filters:
         upload_thumbnail: image_upload_thumbnail

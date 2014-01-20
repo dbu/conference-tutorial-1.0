@@ -24,6 +24,28 @@ services:
         tags:
             - { name: cmf_published_voter, priority: 10 }
 
+    dbu_conference.block.recently_added:
+        class: Dbu\ConferenceBundle\Block\RecentlyAddedBlockService
+        arguments:
+            - "acme_main.block.rss"
+            - "@templating"
+        calls:
+            - [ setDocumentManager, [@doctrine_phpcr.odm.document_manager] ]
+        tags:
+            - {name: "sonata.block"}
+
+    dbu_conference.admin.recently_added:
+        class: Dbu\ConferenceBundle\Admin\RecentlyAddedBlockAdmin
+        arguments:
+            - ~
+            - Dbu\ConferenceBundle\Document\RecentlyAddedBlock
+            - SonataAdminBundle:CRUD
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+            - [ setRootPath, [ %cmf_block.persistence.phpcr.block_basepath% ] ]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: dashboard.group_content, label_catalogue: "DbuConferenceBundle", label: "Recently Added Block", label_translator_strategy: sonata.admin.label.strategy.underscore }
+
     dbu_conference.admin.room:
         class: Dbu\ConferenceBundle\Admin\RoomAdmin
         arguments:

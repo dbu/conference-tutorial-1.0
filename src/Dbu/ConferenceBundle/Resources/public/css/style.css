@@ -33,6 +33,25 @@
 .sidebar {
     margin-top: 160px;
 }
+.sidebar h2 {
+    font-size: 20px;
+}
+.sidebar ul {
+    padding-left: 0px;
+    font-size: 14px;
+    line-height: 1.2em;
+    list-style-type: none;
+}
+.sidebar li {
+    margin-bottom: 10px;
+}
+.sidebar li .date {
+    display: block;
+    font-style: italic;
+}
+.sidebar .presentation-link {
+    font-weight: normal;
+}
 
 .user-control {
     float: right;
