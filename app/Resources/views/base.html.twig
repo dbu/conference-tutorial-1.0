@@ -30,6 +30,9 @@
                     <li><a href="{{ path('login') }}">Login</a></li>
                 {% endif %}
                 </ul>
+
+                {{ locale_switcher(null, null, '::switcher_links.html.twig') }}
+
             </div>
         </div>
     {% endblock %}
@@ -60,7 +63,7 @@
     {% block content_footer %}
         <div class="l-box ribbon">
             <h2>{{ 'site.action_attend'|trans }}</h2>
-            <a href="{{ path('dbu_conference_subscribe') }}" class="pure-button primary-button">Sign up</a>
+            <a href="{{ path('dbu_conference_subscribe') }}" class="pure-button primary-button">{{ 'site.action_attend_signup'|trans }}</a>
         </div>
     {% endblock %}
 

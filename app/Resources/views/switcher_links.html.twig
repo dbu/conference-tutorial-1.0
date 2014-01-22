@@ -1,0 +1,7 @@
+<ul class="locale-chooser">
+{% for locale in locales %}
+    <li {% if current_locale == locale.locale %}class="locale-current"{% endif %}>
+        <a href="{{ locale.link }}" title="{{ locale.locale_target_language }}">{{ locale.locale }}</a>
+    </li>
+{% endfor %}
+</ul>

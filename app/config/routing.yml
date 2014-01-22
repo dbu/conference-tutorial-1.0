@@ -1,5 +1,13 @@
+home_redirect:
+    pattern: /
+    defaults:
+        _controller: lunetics_locale.switcher_controller:switchAction
+        route: /cms/simple
+        statusCode: 301
+        useReferrer: false
+
 login:
-    path:   /login
+    path:   /{_locale}/login
     defaults:  { _controller: DbuConferenceBundle:Security:login }
 login_check:
     path:   /login_check
@@ -7,7 +15,7 @@ logout:
     path:   /logout
 
 dbu_conference_subscribe:
-    path: /subscribe
+    path: /{_locale}/subscribe
     defaults: { _controller: DbuConferenceBundle:Subscribe:subscribe }
 
 create:
@@ -21,11 +29,27 @@ _imagine:
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
+    prefix: /{_locale}/admin
 sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /admin
+    prefix: /{_locale}/admin
+
+# redirect routes for the non-locale routes
+admin_without_locale:
+    pattern: /admin
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
+admin_dashboard_without_locale:
+    pattern: /admin/dashboard
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 cmf_tree:

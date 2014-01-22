@@ -1,0 +1,18 @@
+site:
+    title: Die Konferenz
+    slogan: Konferenz Webseite
+    description:  Dies ist eine Demo Webseite, die zeigt wie man mit dem Symfony CMF eine Webseite entwickelt.
+    action_attend: Möchtest du an die Konferenz kommen?
+    action_attend_signup: Anmelden
+    recent: Kürzlich hinzugefügt
+    no_recent: Noch nichts bestätigt, bitte später wieder vorbeischauen.
+    subscribe: Bitte melde dich für die Konferenz an.
+
+presentation:
+    location: Raum
+    unpublished: Unbestätigt
+
+speaker:
+    presentations: Präsentationen
+
+subscribe: Anmelden

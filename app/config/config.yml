@@ -144,6 +144,8 @@ lunetics_locale:
         - cookie
         - browser
     allowed_locales: %locales%
+    switcher:
+        show_current_locale: true
 
 
 # Swiftmailer Configuration

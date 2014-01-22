@@ -14,7 +14,7 @@ class SubscribeController extends Controller
         $form = $this->createFormBuilder($defaultData)
             ->add('name', 'text')
             ->add('email', 'email')
-            ->add('Subscribe', 'submit')
+            ->add('subscribe', 'submit', array('translation_domain' => 'messages', 'label' => 'subscribe'))
             ->getForm();
 
         $form->handleRequest($request);

@@ -1,0 +1,8 @@
+{% for locale in locales %}
+    {% if loop.index > 1 %} | {% endif %}
+    {% if current_locale == locale.locale %}
+        <span class="locale-current">{{ locale.locale }}</span>
+    {% else %}
+        <a href="{{ locale.link }}" title="{{ locale.locale_target_language }}">{{ locale.locale }}</a>
+    {% endif %}
+{% endfor %}

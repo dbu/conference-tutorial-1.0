@@ -12,7 +12,11 @@ sonata_admin:
     templates:
         # default global templates
         ajax:    SonataAdminBundle::ajax_layout.html.twig
+        user_block: DbuConferenceBundle:Admin:topnav.html.twig
     extensions:
+        cmf_core.admin_extension.translatable:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface
         cmf_core.admin_extension.publish_workflow.publishable:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface

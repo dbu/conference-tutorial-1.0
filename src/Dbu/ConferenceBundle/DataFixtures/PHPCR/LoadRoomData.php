@@ -42,6 +42,7 @@ class LoadRoomData extends ContainerAware implements FixtureInterface, OrderedFi
     {
         $room = new Room();
         $room->setPosition($parent, $name);
+        $room->setAddLocalePattern(true);
         $room->setDescription($description);
         $room->setTitle($title);
         $room->setBody($body);

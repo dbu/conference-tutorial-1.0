@@ -53,8 +53,23 @@
     font-weight: normal;
 }
 
-.user-control {
+.pure-menu > ul.user-control {
     float: right;
+}
+
+.pure-menu > ul.locale-chooser {
+    float: right;
+    padding-top: 4px;
+    padding-right: 20px;
+}
+.pure-menu > ul.locale-chooser a {
+    display: inline;
+    padding: 0 10px 0 0;
+}
+
+.pure-menu > ul.locale-chooser li.locale-current a {
+    color: black;
+    font-weight: bold;
 }
 
 .error {
