@@ -88,6 +88,15 @@ cmf_core:
     multilang:
         locales: %locales%
 
+cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 20
+            router.default: 100
+    dynamic:
+        templates_by_class:
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: DbuConferenceBundle:Page:index.html.twig
+
 cmf_simple_cms:
     routing:
         controllers_by_type:
