@@ -137,9 +137,14 @@ liip_imagine:
                 thumbnail: { size: [130, 130], mode: outbound }
         image_upload_thumbnail:
             data_loader: cmf_media_doctrine_phpcr
-            format: jpg
             filters:
                 thumbnail: { size: [120, 120], mode: outbound }
+        cmf_block:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                upscale: { min: [400, 260] }
+                thumbnail: { size: [400, 260], mode: inbound }
 
 fos_rest:
     view:

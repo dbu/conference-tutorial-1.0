@@ -101,3 +101,31 @@ body.admin .pure-menu-fixed {
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
+
+.cmf-block-slideshow {
+    position: relative;
+    height: 340px;
+}
+
+.ribbon.slideshow {
+    background-color: white;
+    text-align: left;
+}
+
+.slideshow ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cmf-block-slideshow li {
+    position: absolute;
+    top: 36px;
+}
+.cmf-block-slideshow li span {
+    position: absolute;
+    bottom: 8px;
+    left: 5px;
+    color: white;
+    text-shadow: 0 0 5px rgba(50, 50, 50, 0.9);
+}

@@ -1,0 +1,11 @@
+{% extends "DbuConferenceBundle:Page:index.html.twig" %}
+
+{% block content %}
+{{ parent() }}
+
+        <div class="l-box ribbon slideshow" id="main-slideshow">
+            {{ sonata_block_render({
+                'name': '/cms/content/default/slideshow'
+            }) }}
+        </div>
+{% endblock %}

@@ -23,11 +23,13 @@ sonata_admin:
             excludes:
                 - dbu_conference.admin.speaker
                 - dbu_conference.admin.room
+                - cmf_block.imagine.imagine_admin
         cmf_core.admin_extension.publish_workflow.time_period:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
             excludes:
                 - dbu_conference.admin.room
+                - cmf_block.imagine.imagine_admin
     dashboard:
         blocks:
             # display a dashboard block

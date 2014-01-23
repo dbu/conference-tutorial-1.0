@@ -7,7 +7,10 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use PHPCR\Util\PathHelper;
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock;
+use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock;
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock;
+use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock;
+use Symfony\Cmf\Bundle\MediaBundle\Doctrine\Phpcr\Image;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 use Symfony\Component\DependencyInjection\ContainerAware;
@@ -53,6 +56,7 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $page->setAddLocalePattern(true);
         $page->setTitle('Our lovely conference');
         $page->setBody('Welcome to the conference website.');
+        $page->setDefault('_template', 'DbuConferenceBundle:Page:home.html.twig');
         $manager->persist($page);
         $manager->bindTranslation($page, 'en');
 
@@ -130,6 +134,45 @@ class LoadOverviewData extends ContainerAware implements FixtureInterface, Order
         $recent->setName('presentations');
         $manager->persist($recent);
 
+        // create slideshow
+        $slideshow = new SlideshowBlock();
+        $slideshow->setParentDocument($manager->find(null, '/cms/content/default'));
+        $slideshow->setName('slideshow');
+        $slideshow->setTitle('Conference Slideshow');
+        $manager->persist($slideshow);
+
+        $this->createSlide($manager, array(
+            'parent' => $slideshow,
+            'name' => 'first',
+            'label' => 'Day trip: Sun',
+            'image' => 'slide1.jpg',
+        ));
+
+        $this->createSlide($manager, array(
+            'parent' => $slideshow,
+            'name' => 'second',
+            'label' => 'Day trip: Lake',
+            'image' => 'slide2.jpg',
+        ));
+
         $manager->flush();
+    }
+
+    private function createSlide(DocumentManager $manager, $data)
+    {
+        $slide = new ImagineBlock();
+        $slide->setParentDocument($data['parent']);
+        $slide->setName($data['name']);
+        $slide->setLabel($data['label']);
+        $image = new Image();
+        $image->setFileContentFromFilesystem(
+            __DIR__ .
+            DIRECTORY_SEPARATOR .
+            'images' .
+            DIRECTORY_SEPARATOR .
+            $data['image']
+        );
+        $slide->setImage($image);
+        $manager->persist($slide);
     }
 }
