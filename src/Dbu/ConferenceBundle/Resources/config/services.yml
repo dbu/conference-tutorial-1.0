@@ -24,6 +24,16 @@ services:
         tags:
             - { name: cmf_published_voter, priority: 10 }
 
+    dbu_conference.menu.hardcoded_url_voter:
+        class: Dbu\ConferenceBundle\Voter\HardcodedUrlVoter
+        arguments:
+            - contentDocument
+            - Dbu\ConferenceBundle\Document\Presentation
+            - /schedule
+        tags:
+            - { name: "cmf_menu.voter" }
+            - { name: "cmf_request_aware" }
+
     dbu_conference.block.recently_added:
         class: Dbu\ConferenceBundle\Block\RecentlyAddedBlockService
         arguments:
